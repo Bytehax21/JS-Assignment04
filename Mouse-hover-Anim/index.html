@@ -27,6 +27,29 @@
 </head>
 <body>
     <div class="hover-box"></div>
-    
+    <script>
+        const box = document.querySelector('.hover-box');
+        box.style.position = 'absolute';    
+        box.addEventListener('mousemove',(event)=>{
+
+            console.log(event);
+
+
+            let x = event.clientX;
+            console.log(x);
+            let y = event.clientY;
+            console.log(y);
+            let rightDir = event.screenX;
+            let leftDir = event.screenX;
+            // box.style.transform = `translate(${x}px, ${y}px)`;
+            box.style.top = y + 'px';
+            box.style.bottom = x + 'px';
+            
+            box.style.left = leftDir + 'px';
+            box.style.right = rightDir + 'px';
+
+        })
+        
+    </script>
 </body>
 </html>
