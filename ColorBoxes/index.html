@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colored Boxex</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .reset {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+      .red {
+        background: linear-gradient(to right, #ed213a, #93291e);
+      }
+      .gray {
+        background: linear-gradient(to right, #bdc3c7, #2c3e50);
+      }
+      .blue {
+        background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+      }
+      .yellow {
+        background: linear-gradient(to right, #cac531, #f3f9a7);
+      }
+      .purple {
+        background: linear-gradient(to top, #ff0099, #493240);
+
+      }
+      .orange {
+        background: linear-gradient(to right, #fc4a1a, #f7b733);
+      }    
+      .box:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+    </style>
+    </style>
+  </head>
+  <body>
+    <div class="reset">Reset</div>
+    <div class="box red"></div>
+    <div class="box gray"></div>
+    <div class="box blue"></div>
+    <div class="box yellow"></div>
+    <div class="box purple"></div>
+    <div class="box orange"></div>
+    <script>
+        let resetButton = document.querySelector(".reset")
+        resetButton.addEventListener("click",function(){
+            document.body.style.background = "#F0F0F0"
+        })
+        let redBox = document.querySelector(".red")
+        console.log(redBox);
+        redBox.addEventListener("click",function(){
+            document.body.style.background = "linear-gradient(to right, #ed213a, #93291e)"
+        })
+        let grayBox = document.querySelector(".gray")
+        grayBox.addEventListener("click",function(){
+            document.body.style.background = "linear-gradient(to right, #bdc3c7, #2c3e50)"
+        })
+        let blueBox = document.querySelector(".blue")
+        blueBox.addEventListener("click",function(){
+            document.body.style.background = "linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6)"
+        })
+        let yellowBox = document.querySelector(".yellow")
+        yellowBox.addEventListener("click",function(){
+            document.body.style.background = "linear-gradient(to right, #cac531, #f3f9a7)"
+        })
+        let purpleBox = document.querySelector(".purple")
+        purpleBox.addEventListener("click",function(){
+            document.body.style.background = "linear-gradient(to top, #ff0099, #493240)"
+        })
+        let orangeBox = document.querySelector(".orange")
+        orangeBox.addEventListener("click",function(){
+            document.body.style.background = "linear-gradient(to right, #fc4a1a, #f7b733)"
+        })
+        
+    </script>
+  </body>
+</html>
