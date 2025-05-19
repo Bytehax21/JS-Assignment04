@@ -1,6 +1,4 @@
 const display = document.getElementById("display");
-// console.log(display, "Display");
-
 const addToDisplay = (input) => {
   display.value += input;
 };
@@ -11,15 +9,35 @@ const deleteValue = () => {
 const clearValue = () => {
   display.value = "";
 };
+
 const calculate = () => {
-  display.value = eval(display.value);
-  if (display.value == "Infinity") {
-    display.value = "Error Division by 0";
-  } else if (display.value == display.input + "undefined") {
+  let input = display.value;
+  if (input === "") {
     display.value = "Enter a number";
-  } else if (display.value == "NaN") {
-    display.value = "Enter a valid expression";
-  } else if (display.value == "undefined") {
-    display.value = "Enter a number";
+    return;
+  }
+
+  let lastChar = input.slice(-1);
+  if (
+    lastChar === "+" ||
+    lastChar === "-" ||
+    lastChar === "*" ||
+    lastChar === "/"
+  ) {
+    display.value = "Incomplete Expression";
+    return;
+  }
+
+  if (input.includes("/0")) {
+    display.value = "Error: Division by 0";
+    return;
+  }
+
+  let result = eval(input);
+
+  if (isNaN(result)) {
+    display.value = "Error: Invalid Expression";
+  } else {
+    display.value = result;
   }
 };
